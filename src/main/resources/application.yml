@@ -1,0 +1,26 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    username: root
+    password: atguigu
+    url: jdbc:mysql://192.168.232.100:3306/springboot?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+      database: mysql
+      show-sql: true
+      generate-ddl: true
+      hibernate:
+        ddl-auto: update
+        naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  main:
+        allow-bean-definition-overriding:  true
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml #指定主配置文件
+  mapper-locations: classpath:/mybatis/mapper/*.xml # 指定xml映射文件路径
+  type-aliases-package: com.atguigu.domain # 指定mybatis别名包
+#  type: com.alibaba.druid.pool.DruidDataSource
+logging:
+  level:
+    com.atguigu.dao: debug # 配置日志
